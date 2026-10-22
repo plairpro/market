@@ -84,8 +84,8 @@ for(let i=0;i<80;i++){let x=-29+(i+.5)*58/80,y=7+7*Math.sin((x+29)/58*Math.PI),s
 mb(58,.25,1,'#dde5df',0,4.8,12.5);for(let x=-28;x<29;x+=.3)mb(.035,1.1,.06,'#dfe6df',x,5.4,12.7);mb(58,.07,.1,'#f4f5ea',0,5.98,12.7);
 mb(9,3.5,1.2,'#242f33',0,1.9,13);mb(6.8,2.8,.15,'#52747a',0,1.5,13.68);for(let x of [-3.4,0,3.4])mb(.12,2.8,.2,'#1c2a2e',x,1.5,13.8);
 mesh(new T.PlaneGeometry(6.7,.62),new T.MeshBasicMaterial({map:textTex('ВХОД / КЕРҮ 1','#242f33','#fff9dd')}),0,3.27,13.66,campus);
-mb(18,5.3,.25,'#263238',0,17.8,10);const logo=new T.TextureLoader().load('market-logo.svg');logo.encoding=T.sRGBEncoding;mesh(new T.PlaneGeometry(17.4,5.1),new T.MeshBasicMaterial({map:logo,transparent:true,side:T.DoubleSide}),0,17.8,10.2,campus);
-for(let x of [-8,8])mb(.1,2.2,.1,'#344147',x,15.2,10);
+mb(9,2.65,.25,'#263238',0,16.475,10);const logo=new T.TextureLoader().load('market-logo.svg');logo.encoding=T.sRGBEncoding;mesh(new T.PlaneGeometry(8.7,2.55),new T.MeshBasicMaterial({map:logo,transparent:true,side:T.DoubleSide}),0,16.475,10.2,campus);
+for(let x of [-4,4])mb(.1,2.2,.1,'#344147',x,15.2,10);
 let cap=mesh(new T.ConeGeometry(1.5,1.7,4),mat('#8f9a9c'),0,19.1,-1,campus);cap.rotation.y=Math.PI/4;
 for(let x of [-21,-12,12,21]){mb(6,.3,1.4,'#d7a662',x,.8,23);mb(6,.8,.15,'#e1b577',x,1.4,23.6);for(let dx of [-2,2])mb(.13,.7,1.1,'#303d3f',x+dx,.4,23);tree(x,FINISH_Z-10,1.35);}
 for(let x of [-26,26]){mb(.15,7,.15,'#26383b',x,3.5,21);mb(2,.15,.22,'#26383b',x-1,7,21);mb(1.5,.07,.2,'#fff5c6',x-1,6.9,21);}
@@ -133,7 +133,7 @@ let failureTime=0,smokeClock=0;const smoke=[];const smokePool=new T.InstancedMes
 function breakdown(){S.mode='broken';$('tapzones').hidden=true;S.failed=true;S.speed=0;S.lateralVelocity=0;S.hit=.35;failureTime=0;smokeClock=.2;chassis.rotation.x=0;chassis.rotation.z=0}
 function updateSmoke(dt){smokePool.count=0;}
 let S={mode:'intro',lane:1,z:0,speed:16,score:0,correct:0,combo:0,hit:0,time:0,lateralVelocity:0,errors:0,failed:false},sound=true,audioCtx,audioBus,motorGain,motorFilter,motorOsc,motorToneGain,turnOsc,turnGain;let nextBird=0;let finishTime=0;
-const music=new Audio('market-music.mp3');music.loop=true;music.preload='auto';music.volume=.28;function syncMusic(){if(sound&&!document.hidden&&S.mode==='play'){music.play().catch(()=>{})}else music.pause()}
+const music=new Audio('market-music.mp3');music.loop=true;music.preload='auto';music.volume=.80;function syncMusic(){if(sound&&!document.hidden&&S.mode==='play'){music.play().catch(()=>{})}else music.pause()}
 function ensureAudio(){try{if(!audioCtx){audioCtx=new(window.AudioContext||window.webkitAudioContext)();audioBus=audioCtx.createGain();audioBus.gain.value=sound?.84:0;audioBus.connect(audioCtx.destination);
 const noise=audioCtx.createBuffer(1,audioCtx.sampleRate*5,audioCtx.sampleRate);let samples=noise.getChannelData(0),brown=0;for(let i=0;i<samples.length;i++){brown=(brown+Math.random()*.04-.02)/1.02;samples[i]=brown*4}
 function noiseLayer(type,freq,volume){let src=audioCtx.createBufferSource(),filter=audioCtx.createBiquadFilter(),gain=audioCtx.createGain();src.buffer=noise;src.loop=true;filter.type=type;filter.frequency.value=freq;filter.Q.value=.4;gain.gain.value=volume;src.connect(filter);filter.connect(gain);gain.connect(audioBus);src.start();return {filter,gain}}
