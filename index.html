@@ -62,12 +62,19 @@ html,body,button,h1,h2,#result h2{font-family:SeedDidot,Didot,Georgia,serif;colo
 #studio-badge{position:fixed;z-index:4;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);width:clamp(165px,19vw,225px)}
 #studio-badge img{display:block;width:100%;height:auto}
 @media(max-height:500px){#studio-badge{width:140px;bottom:10px}}
+
+/* Airier cover spacing and linked studio credit. */
+#intro .seed-logo{transform:translateY(-12px);margin-bottom:40px}
+#intro p{color:#f7c35b;text-shadow:0 1px 9px #38564045}
+#studio-badge{width:clamp(130px,14vw,170px);border-radius:14px;transition:filter .2s}
+#studio-badge:hover{filter:brightness(1.04)}#studio-badge:focus-visible{outline:3px solid #f7c35b;outline-offset:5px}
+@media(max-height:500px){#intro .seed-logo{transform:translateY(-5px);margin-bottom:17px}#studio-badge{width:115px}}
 </style>
 <div id="world" class="cover"></div><div id="confetti" aria-hidden="true"></div><div id="vignette"></div><div id="flash"></div>
 <div id="tapzones" hidden><button id="tapleft" aria-label="Перестроиться влево"><span class="tapdot" aria-hidden="true">‹</span></button><button id="tapright" aria-label="Перестроиться вправо"><span class="tapdot" aria-hidden="true">›</span></button></div>
 <div id="wordhud" hidden><div id="wordlabel">Собери</div><div id="word"></div><div id="wordmeta"></div><div id="route"><i id="routefill"></i></div></div><div id="toast" role="status"></div><div id="pausebox" class="panel" hidden><h2 id="pausetitle">Небольшая остановка</h2><button id="resume" class="primary">Продолжить →</button></div><div class="top"><button class="sound" id="pause" aria-label="Пауза" hidden>Ⅱ</button><button class="sound" id="sound" aria-label="Выключить звук">♫</button></div>
 <div id="intro" class="panel"><div class="seed-logo"><img src="seed-logo.png" alt="Seed"></div><h1 id="introtitle">НА РЫНОК</h1><p id="introcopy">Собирай продукты по буквам</p></div>
-<div id="studio-badge"><img src="plair-studio-badge.png" alt="Разработано в Plair Studio"></div>
+<a id="studio-badge" href="https://www.plair.pro/studio/" target="_blank" rel="noopener noreferrer" aria-label="Plair Studio — сайт студии"><img src="plair-studio-badge.png" alt="Разработано в Plair Studio"></a>
 <div id="startbox" class="panel"><button id="start" class="primary">Поехали</button></div>
 <div id="lives" role="img" aria-label="Осталось 3 попытки" hidden><span id="life0" aria-hidden="true"><img src="seed-simple-red.png" alt=""></span><span id="life1" aria-hidden="true"><img src="seed-simple-yellow.png" alt=""></span><span id="life2" aria-hidden="true"><img src="seed-simple-green.png" alt=""></span></div>
 <div id="result" class="panel" hidden><div class="star" id="resulticon">✦</div><h2 id="resulttitle">Будущее — рядом!</h2><strong id="total"></strong><p id="summary"></p><button id="again" class="primary">Поехали</button><button id="home" class="primary">В начало</button></div>
