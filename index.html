@@ -31,7 +31,7 @@ h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(4
 html,body,button,h1,h2,#result h2{font-family:SeedDidot,Didot,Georgia,serif;color:#385640}
 #world{transition:filter .45s,transform .45s}#world.cover{filter:blur(3px);transform:scale(1.015)}
 #intro{top:9%;width:min(92%,700px)}#intro h1{font-size:clamp(40px,5.3vw,68px);letter-spacing:-.035em;line-height:1.1;color:#385640;text-shadow:0 2px 18px #fbefecb0}
-.seed-logo{position:relative;overflow:hidden;width:clamp(125px,14vw,180px);aspect-ratio:853/279;margin:0 auto 22px}.seed-logo img{position:absolute;width:160.14%;max-width:none;height:auto;left:-30.13%;top:-87.45%}
+.seed-logo{position:relative;overflow:hidden;width:clamp(105px,11.5vw,150px);aspect-ratio:853/279;margin:0 auto 22px}.seed-logo img{position:absolute;width:160.14%;max-width:none;height:auto;left:-30.13%;top:-87.45%}
 #intro p{font-size:clamp(17px,2vw,22px);color:#385640;margin:14px 0;text-shadow:0 1px 8px #fbefec}
 .primary{background:var(--seed-red);border-color:var(--seed-peach);color:#fffaf5;font-size:23px;box-shadow:0 5px 0 #bc4c36,0 12px 25px #56856325}.primary:active{box-shadow:0 2px 0 #bc4c36}
 @media(hover:hover){.primary:hover{background:#fffaf5;color:var(--seed-red);border-color:var(--seed-red)}}
@@ -41,13 +41,20 @@ html,body,button,h1,h2,#result h2{font-family:SeedDidot,Didot,Georgia,serif;colo
 #result,#pausebox{background:#fbefecf5;border-color:#fffaf5}#result #total,#result #summary,#result h2{color:#385640}#result #summary b{color:var(--seed-green)}#toast{background:var(--seed-paper);color:#385640}#loading{background:var(--seed-paper);color:var(--seed-green)}button:focus-visible{outline-color:var(--seed-yellow)}
 @media(max-width:600px){#intro{top:11%}.seed-logo{margin-bottom:18px}#lives{left:6px;gap:0;top:18px}#lives img{width:28px;height:38px}#wordlabel,#wordmeta{font-size:9px}#wordhud{max-width:calc(100vw - 183px)}}
 @media(max-height:500px){#intro{top:5%}.seed-logo{width:100px;margin-bottom:10px}#intro h1{font-size:36px}#intro p{margin:8px 0}#startbox{bottom:20px}}
+
+/* Cover refinement and the simple seed shapes from brandbook page one. */
+#intro h1,#intro p{color:#fff;text-shadow:0 2px 14px #38564065}
+#startbox{top:50%;bottom:auto;transform:translate(-50%,-50%)}
+#lives{gap:8px}#lives img{width:30px;height:36px}
+@media(max-width:600px){#lives{gap:5px}#lives img{width:22px;height:28px}}
+@media(max-height:500px){#intro{top:3%}.seed-logo{width:85px;margin-bottom:8px}#intro h1{font-size:32px}#intro p{font-size:16px;margin:6px 0}#startbox{top:max(50%,190px)}}
 </style>
 <div id="world" class="cover"></div><div id="confetti" aria-hidden="true"></div><div id="vignette"></div><div id="flash"></div>
 <div id="tapzones" hidden><button id="tapleft" aria-label="Перестроиться влево"><span class="tapdot" aria-hidden="true">‹</span></button><button id="tapright" aria-label="Перестроиться вправо"><span class="tapdot" aria-hidden="true">›</span></button></div>
 <div id="wordhud" hidden><div id="wordlabel">Собери</div><div id="word"></div><div id="wordmeta"></div><div id="route"><i id="routefill"></i></div></div><div id="toast" role="status"></div><div id="pausebox" class="panel" hidden><h2 id="pausetitle">Небольшая остановка</h2><button id="resume" class="primary">Продолжить →</button></div><div class="top"><button class="sound" id="pause" aria-label="Пауза" hidden>Ⅱ</button><button class="sound" id="sound" aria-label="Выключить звук">♫</button></div>
 <div id="intro" class="panel"><div class="seed-logo"><img src="seed-logo.png" alt="Seed"></div><h1 id="introtitle">На рынок</h1><p id="introcopy">Собирай продукты по буквам</p></div>
 <div id="startbox" class="panel"><button id="start" class="primary">Поехали</button></div>
-<div id="lives" role="img" aria-label="Осталось 3 попытки" hidden><span id="life0" aria-hidden="true"><img src="seed-red.png" alt=""></span><span id="life1" aria-hidden="true"><img src="seed-yellow.png" alt=""></span><span id="life2" aria-hidden="true"><img src="seed-green.png" alt=""></span></div>
+<div id="lives" role="img" aria-label="Осталось 3 попытки" hidden><span id="life0" aria-hidden="true"><img src="seed-simple-red.png" alt=""></span><span id="life1" aria-hidden="true"><img src="seed-simple-yellow.png" alt=""></span><span id="life2" aria-hidden="true"><img src="seed-simple-green.png" alt=""></span></div>
 <div id="result" class="panel" hidden><div class="star" id="resulticon">✦</div><h2 id="resulttitle">Будущее — рядом!</h2><strong id="total"></strong><p id="summary"></p><button id="again" class="primary">Поехали</button><button id="home" class="primary">В начало</button></div>
 <div id="loading"><div>Готовим поездку…<small>Тележка уже на старте</small></div></div>
 <script>
