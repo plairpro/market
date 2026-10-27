@@ -1,5 +1,6 @@
-<!doctype html><html lang="ru"><title>На рынке</title>
+<!doctype html><html lang="ru"><head><title>На рынке</title>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#143949">
+<script src="https://plair.pro/sdk.js"></script>
 <link rel="icon" type="image/svg+xml" href="seed-favicon.svg">
 
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;650;700&display=swap" rel="stylesheet">
@@ -88,7 +89,7 @@ html,body,button,h1,h2,#result h2{font-family:SeedDidot,Didot,Georgia,serif;colo
 #result.panel #summary b{font-size:34px}#result.panel #summary small{font-size:12px}#result.panel #total{font-size:19px}#result.panel h2{font-size:20px;margin-bottom:12px}
 @media(max-height:550px){#result.panel{max-height:60vh}#result.panel #resulticon,#result.panel #resultmascot{height:48px}}
 .pause-mascot{display:flex;justify-content:center;mix-blend-mode:multiply;margin:0 auto 16px}.pause-mascot img{height:100px;width:auto;max-width:180px;object-fit:contain}@media(max-height:550px){.pause-mascot img{height:64px}.pause-mascot{margin-bottom:8px}}
-</style>
+</style></head>
 <div id="world" class="cover"></div><div id="confetti" aria-hidden="true"></div><div id="vignette"></div><div id="flash"></div>
 <div id="tapzones" hidden><button id="tapleft" aria-label="Перестроиться влево"><span class="tapdot" aria-hidden="true">‹</span></button><button id="tapright" aria-label="Перестроиться вправо"><span class="tapdot" aria-hidden="true">›</span></button></div>
 <div id="wordhud" hidden><div id="wordlabel">Собери</div><div id="word"></div><div id="wordmeta"></div><div id="route"><i id="routefill"></i></div></div><div id="toast" role="status"></div><div id="pausebox" class="panel" hidden><div class="pause-mascot"><img src="result-mascot-yellow.png" alt=""></div><h2 id="pausetitle">Небольшая остановка</h2><button id="resume" class="primary">Продолжить →</button></div><div class="top"><button class="sound" id="pause" aria-label="Пауза" hidden>Ⅱ</button><button class="sound" id="sound" aria-label="Выключить звук">♫</button></div>
